@@ -1,0 +1,30 @@
+{
+  "name": "sampleapi1",
+  "version": "1.0.0",
+  "description": "sample API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beverand/SampleAPI1.git"
+  },
+  "keywords": [
+    "Cherry on Tech"
+  ],
+  "author": "beverand",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beverand/SampleAPI1/issues"
+  },
+  "homepage": "https://github.com/beverand/SampleAPI1#readme",
+  "dependencies": {
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  }
+}
