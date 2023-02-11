@@ -32,7 +32,7 @@ app.get("/questions", async (req, res) => {
 app.get("/questions/qtype/:qtype", async (req, res) => {
   //get all questions in one type
   const { qtype } = req.params;
-  let questions = client.db("DailyDev")
+  let questions = await client.db("DailyDev")
                         .collection("questions")
                         .find({qtype:qtype})
                         .project({ question:1, qtype:1, _id:0 })
@@ -48,7 +48,7 @@ app.get("/questions/qtype/:qtype", async (req, res) => {
 app.get("/qsearch/:search", async (req, res) => {
   //get all questions that contain search criteria
   const { search } = req.params;
-  let questions = client.db("DailyDev")
+  let questions = await client.db("DailyDev")
                         .collection("questions")
                         .find({question:new RegExp('.*' + search + '.*')}).project({ question:1, qtype:1, _id:0 }).toArray();
 
@@ -62,7 +62,7 @@ app.get("/qsearch/:search", async (req, res) => {
 app.get("/questions/:qid", async (req, res) => {
   //get single question by id 
   const {  qid } = req.params;
-  let questions = client.db("DailyDev")
+  let questions = await client.db("DailyDev")
                         .collection("questions")
                         .aggregate([
                            {
@@ -82,7 +82,7 @@ app.get("/questions/:qid", async (req, res) => {
 app.get("/qsamp/:qcount", async (req, res) => {
   //get single question by id 
   const {  qcount } = req.params;
-  let questions = client.db("DailyDev")
+  let questions = await client.db("DailyDev")
                         .collection("questions")
                         .aggregate([ { $sample: { size: Number(qcount)} } ])
                         .toArray();
