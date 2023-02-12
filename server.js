@@ -45,7 +45,7 @@ app.get("/questions/qtype/:qtype", async (req, res) => {
   }
 })
 
-app.get("/qsearch/:search", async (req, res) => {
+app.get("/questions/qsearch/:search", async (req, res) => {
   //get all questions that contain search criteria
   const { search } = req.params;
   let questions = await client.db("DailyDev")
@@ -79,7 +79,7 @@ app.get("/questions/:qid", async (req, res) => {
   }
 })
 
-app.get("/qsamp/:qcount", async (req, res) => {
+app.get("/questions/qsamp/:qcount", async (req, res) => {
   //get single question by id 
   const {  qcount } = req.params;
   let questions = await client.db("DailyDev")
