@@ -1,8 +1,8 @@
 const { MongoClient, ObjectId } = require('mongodb');
 const express = require('express');
 const app = express();
-require("dotenv").config({path: "./.env"});
 const cors = require('cors');
+require("dotenv").config({path: "./.env"});
 const PORT = process.env.PORT || 3010;
 
 const uri = process.env.DB_STRING;
