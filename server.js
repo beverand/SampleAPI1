@@ -2,7 +2,8 @@ const { MongoClient, ObjectId } = require('mongodb');
 const express = require('express');
 const app = express();
 require("dotenv").config({path: "./.env"});
-const PORT = process.env.PORT || 3000
+const cors = require('cors');
+const PORT = process.env.PORT || 3000;
 
 const uri = process.env.DB_STRING;
 const client = new MongoClient(uri, {useNewUrlParser: true, useUnifiedTopology:true});
@@ -14,6 +15,8 @@ client.connect(err => {
         console.log(`listening for requests on ${PORT}`);
     })
 });
+
+app.use(cors);
 
 app.get("/questions", async (req, res) => {
    //all questions
