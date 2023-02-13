@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 require("dotenv").config({path: "./.env"});
-const PORT = process.env.PORT || 3010;
+const PORT = process.env.PORT || 3000;
 
 const uri = process.env.DB_STRING;
 const client = new MongoClient(uri, {useNewUrlParser: true, useUnifiedTopology:true});
