@@ -9,3 +9,4 @@ This is a really basic API that uses mongodb to deploy to Cyclic
 5. Execute for production: npm start
 6. Test with postman or browser locally: http://localhost:3000/questions
 6. Test after deploying to Cyclic using: {Cyclic address here}/questions
+![SampleAPI mind map](https://coggle.it/diagram/Y-n4l5QtDmLlSY7D/t/sampleapi/3bd32ad14c64370b09a0fd6558edff250f39288610cb1032670f255ddd0933ff "SampleAPI Mind Map")
