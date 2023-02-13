@@ -100,31 +100,12 @@ app.get("/questions/:qid", async (req, res) => {
 app.get("/questions/qsamp/:qcount", async (req, res) => {
   //get single question by id 
   const {  qcount } = req.params;
+  qcount > 150 || qcount < 1 ? qcount = 1 : qcount 
   let questions = await client.db("DailyDev")
                         .collection("questions")
                         .aggregate([ { $sample: { size: Number(qcount)} } ])
                         .toArray();
  if(questions){
-    res.json(questions);
-  } else {
-    res.sendStatus(404);
-  }
-})
-
-app.get("/questions/type", async (req, res) => {
-  //get all types
-  let questions = await client.db("DailyDev")
-                        .collection("questions")
-                        .aggregate([
-                           {
-                              '$group': {
-                                 '_id': '$qtype' 
-                               }
-                           }
-                         ])
-                        .toArray();
-
-  if(questions){
     res.json(questions);
   } else {
     res.sendStatus(404);
