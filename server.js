@@ -1,7 +1,7 @@
 const { MongoClient, ObjectId } = require('mongodb');
 const express = require('express');
 const app = express();
-const cors = require('cors');
+//const cors = require('cors');
 require("dotenv").config({path: "./.env"});
 const PORT = process.env.PORT || 3000;
 
@@ -16,7 +16,7 @@ client.connect(err => {
     })
 });
 
-app.use(cors);
+//app.use(cors);
 
 app.get("/questions", async (req, res) => {
    //all questions
