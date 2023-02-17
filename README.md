@@ -10,3 +10,4 @@ This is a really basic API that uses mongodb to deploy to Cyclic
 6. Test with postman or browser locally: http://localhost:3000/questions
 6. Test after deploying to Cyclic using: {Cyclic address here}/questions
 
+SampleAPI documentation here on SwaggerHub: https://app.swaggerhub.com/apis-docs/beverlyand/sample-api/1.0.0#/
